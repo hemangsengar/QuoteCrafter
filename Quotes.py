@@ -24,6 +24,7 @@ def getQuotes(query):
                 If unclear, ask for clarification—never assume or fill gaps creatively.
                 Output only the quote(s) unless extra formatting or explanation is requested.
                 Reject all padding, disclaimers, or commentary—just precision-crafted quotes.
+                You are required to give the quote only as per the contents
             """),
 
 
