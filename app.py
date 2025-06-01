@@ -1,18 +1,21 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template,request
+from Quotes import *
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def home():
-    title = "Hemang's Portfolio"
+    title = "AI Quotes"
     return render_template("index.html",title=title)
 
-@app.route('/about')
+
+@app.route('/result', methods=['POST'])
 def about():
-    title = "About"
-    names = ["Hemang", "Maya", "Sally"]
-    return render_template("about.html",names=names)
+    input = request.form.get("Insipration")
+    Responce = getQuotes(input)
+    print(Responce)
+    title = "Quote"
+    return render_template("result.html",title =title, Responce=Responce)
 #if __name__ == "__main__":
     

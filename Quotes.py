@@ -27,7 +27,7 @@ def getQuotes(query):
             """),
 
 
-        contents = query
+        contents = [query]
     )
 
     return (response.text)
